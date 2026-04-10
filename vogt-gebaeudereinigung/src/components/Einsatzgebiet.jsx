@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 import { MapPin, Navigation, ExternalLink } from 'lucide-react'
 
 const staedte = [
@@ -51,11 +51,9 @@ export default function Einsatzgebiet() {
     <section id="einsatzgebiet" className="py-20 bg-brand-black section-atmosphere section-glow-right">
       <div className="section-padding">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <ScrollReveal
+          yFrom={24}
+          duration={0.6}
           className="text-center mb-14"
         >
           <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
@@ -75,15 +73,14 @@ export default function Einsatzgebiet() {
           <p className="text-brand-gray text-sm mt-3">
             Klicken Sie auf eine Stadt, um sie auf der Karte zu sehen
           </p>
-        </motion.div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Map */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <ScrollReveal
+            axis="x"
+            xFrom={-24}
+            duration={0.6}
             className="rounded-2xl overflow-hidden border border-white/[0.06] h-96 lg:h-[440px] relative"
           >
             <iframe
@@ -113,14 +110,14 @@ export default function Einsatzgebiet() {
                 <ExternalLink size={12} />
               </a>
             )}
-          </motion.div>
+          </ScrollReveal>
 
           {/* Right column */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <ScrollReveal
+            axis="x"
+            xFrom={24}
+            extraDelay={0.1}
+            duration={0.6}
             className="flex flex-col gap-6"
           >
             {/* City Grid */}
@@ -186,7 +183,7 @@ export default function Einsatzgebiet() {
             >
               Jetzt anfragen – wir kommen zu Ihnen →
             </a>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

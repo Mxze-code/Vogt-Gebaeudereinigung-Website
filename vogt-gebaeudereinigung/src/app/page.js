@@ -2,7 +2,7 @@ import Navbar           from '@/components/Navbar'
 import Hero             from '@/components/Hero'
 import StatsBar         from '@/components/StatsBar'
 import Leistungen       from '@/components/Leistungen'
-import WarumWir         from '@/components/WarumWir'
+import UberUns          from '@/components/UberUns'
 import Ablauf           from '@/components/Ablauf'
 import Preise           from '@/components/Preise'
 import Einsatzgebiet    from '@/components/Einsatzgebiet'
@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
         <StatsBar />
         <Leistungen />
-        <WarumWir />
+        <UberUns />
         <Ablauf />
         <Preise />
         <Einsatzgebiet />

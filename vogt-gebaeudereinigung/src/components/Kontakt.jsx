@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 import { useForm } from 'react-hook-form'
 import { Mail, MessageCircle, Phone, MapPin, CheckCircle, Loader2 } from 'lucide-react'
 import {
@@ -40,7 +40,7 @@ export default function Kontakt() {
         sessionStorage.removeItem('vogt_preselect_leistung')
       }
     }
-  }, [])
+  }, [setValue])
 
   const onSubmit = (data) => {
     setStatus('sending')
@@ -76,11 +76,9 @@ export default function Kontakt() {
     <section id="kontakt" className="py-20 bg-brand-deep section-atmosphere section-glow-left">
       <div className="section-padding">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <ScrollReveal
+          yFrom={24}
+          duration={0.6}
           className="text-center mb-14"
         >
           <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
@@ -98,15 +96,14 @@ export default function Kontakt() {
             Jetzt Anfrage senden
           </h2>
           <p className="text-brand-gray text-sm mt-3">Wir antworten innerhalb von 24 Stunden</p>
-        </motion.div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left: Contact options */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <ScrollReveal
+            axis="x"
+            xFrom={-24}
+            duration={0.6}
             className="flex flex-col gap-5"
           >
             <h3 className="font-montserrat font-semibold text-brand-silverLL text-xl mb-2">
@@ -174,14 +171,14 @@ export default function Kontakt() {
               </div>
             </div>
 
-          </motion.div>
+          </ScrollReveal>
 
           {/* Right: Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <ScrollReveal
+            axis="x"
+            xFrom={24}
+            extraDelay={0.1}
+            duration={0.6}
           >
             {status === 'sent' ? (
               <div className="flex flex-col items-center justify-center h-full gap-5 text-center py-20 rounded-2xl bg-brand-navy/50 border border-brand-blue/20">
@@ -319,7 +316,7 @@ export default function Kontakt() {
                 </div>
               </form>
             )}
-          </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

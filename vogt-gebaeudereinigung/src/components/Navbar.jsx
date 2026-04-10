@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 const navSections = [
   { id: 'leistungen', label: 'Leistungen' },
-  { id: 'warum-wir', label: 'Warum Wir' },
+  { id: 'uber-uns', label: 'Über uns' },
   { id: 'ablauf', label: 'Ablauf' },
   { id: 'preise', label: 'Preise' },
   { id: 'einsatzgebiet', label: 'Einsatzgebiet' },
@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link
               key={link.id}
               href={sectionHref(link.id)}
-              className="text-sm text-brand-silverDark hover:text-brand-silverLL transition-colors duration-200"
+              className="text-sm text-brand-silverDark hover:text-brand-silverLL transition-colors duration-200 whitespace-nowrap shrink-0"
             >
               {link.label}
             </Link>

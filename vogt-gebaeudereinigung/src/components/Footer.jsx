@@ -12,7 +12,7 @@ import {
 
 const navLinks = [
   { href: '#leistungen',   label: 'Leistungen' },
-  { href: '#warum-wir',    label: 'Warum Wir' },
+  { href: '#uber-uns',     label: 'Über uns' },
   { href: '#ablauf',       label: 'Ablauf' },
   { href: '#preise',       label: 'Preise' },
   { href: '#einsatzgebiet', label: 'Einsatzgebiet' },

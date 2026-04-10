@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 import { Briefcase, Building2, Sparkles, Building, CalendarCheck, Home, ArrowRight } from 'lucide-react'
 
 const leistungen = [
@@ -66,11 +66,9 @@ export default function Leistungen() {
     <section id="leistungen" className="py-20 bg-brand-black section-atmosphere section-glow-left">
       <div className="section-padding">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <ScrollReveal
+          yFrom={24}
+          duration={0.6}
           className="text-center mb-14"
         >
           <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
@@ -87,19 +85,19 @@ export default function Leistungen() {
           >
             Unsere Leistungen
           </h2>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {leistungen.map((item, i) => {
             const Icon = item.icon
             return (
-              <motion.div
+              <ScrollReveal
                 key={item.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                yFrom={24}
+                staggerIndex={i}
+                staggerStep={0.1}
+                duration={0.5}
                 className="card-base p-6 flex flex-col gap-4 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center group-hover:bg-brand-blue/30 transition-colors">
@@ -129,17 +127,16 @@ export default function Leistungen() {
                   Anfrage für {item.title}
                   <ArrowRight size={15} className="group-hover/btn:translate-x-1 transition-transform" />
                 </button>
-              </motion.div>
+              </ScrollReveal>
             )
           })}
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+        <ScrollReveal
+          yFrom={24}
+          extraDelay={0.3}
+          duration={0.5}
           className="text-center mt-12"
         >
           <a
@@ -148,7 +145,7 @@ export default function Leistungen() {
           >
             Kostenlos anfragen →
           </a>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 import { Send, MessageSquare, CalendarDays, Sparkles } from 'lucide-react'
 
 const steps = [
@@ -35,11 +35,9 @@ export default function Ablauf() {
     <section id="ablauf" className="py-20 bg-brand-black section-atmosphere section-glow-left">
       <div className="section-padding">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <ScrollReveal
+          yFrom={24}
+          duration={0.6}
           className="text-center mb-16"
         >
           <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
@@ -56,7 +54,7 @@ export default function Ablauf() {
           >
             So läuft es ab
           </h2>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Steps */}
         <div className="relative">
@@ -67,12 +65,12 @@ export default function Ablauf() {
             {steps.map((step, i) => {
               const Icon = step.icon
               return (
-                <motion.div
+                <ScrollReveal
                   key={step.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.12, duration: 0.5 }}
+                  yFrom={24}
+                  staggerIndex={i}
+                  staggerStep={0.12}
+                  duration={0.5}
                   className="flex flex-col items-center text-center"
                 >
                   {/* Icon box with number badge */}
@@ -88,18 +86,17 @@ export default function Ablauf() {
                     {step.title}
                   </h3>
                   <p className="text-brand-gray text-sm leading-relaxed">{step.desc}</p>
-                </motion.div>
+                </ScrollReveal>
               )
             })}
           </div>
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+        <ScrollReveal
+          yFrom={24}
+          extraDelay={0.4}
+          duration={0.5}
           className="text-center mt-14"
         >
           <a
@@ -108,7 +105,7 @@ export default function Ablauf() {
           >
             Jetzt Schritt 1 starten →
           </a>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   )

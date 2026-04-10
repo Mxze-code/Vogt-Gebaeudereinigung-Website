@@ -1,0 +1,12 @@
+{
+  "name": "vogt-gebaeudereinigung-website",
+  "private": true,
+  "description": "Wrapper: Die Next.js-App liegt im Unterordner vogt-gebaeudereinigung/",
+  "scripts": {
+    "setup": "npm install --prefix vogt-gebaeudereinigung",
+    "dev": "npm run dev --prefix vogt-gebaeudereinigung",
+    "build": "npm run build --prefix vogt-gebaeudereinigung",
+    "start": "npm run start --prefix vogt-gebaeudereinigung",
+    "lint": "npm run lint --prefix vogt-gebaeudereinigung"
+  }
+}

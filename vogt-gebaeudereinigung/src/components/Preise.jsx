@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ScrollReveal, { ScrollRevealTab } from '@/components/ScrollReveal'
 import { Check, Minus, Car, ChevronDown, ChevronUp } from 'lucide-react'
 
 /* ─────────── GEWERBE DATA ─────────── */
@@ -228,11 +229,9 @@ export default function Preise() {
     <section id="preise" className="py-20 bg-brand-deep section-atmosphere section-glow-right">
       <div className="section-padding">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <ScrollReveal
+          yFrom={24}
+          duration={0.6}
           className="text-center mb-8"
         >
           <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
@@ -252,7 +251,7 @@ export default function Preise() {
           <p className="text-brand-gray text-sm mt-3 max-w-lg mx-auto">
             Alle Preise verstehen sich als Orientierungswerte. Ihr individuelles Angebot erhalten Sie kostenlos und unverbindlich.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Gewerbe / Privat */}
         <div className="flex justify-center mb-10">
@@ -297,35 +296,33 @@ export default function Preise() {
         )}
 
         {/* Cards */}
-        <motion.div
+        <ScrollRevealTab
           key={kundeTyp}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35 }}
+          tabKey={kundeTyp}
+          yFrom={16}
+          duration={0.35}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
         >
           {pakete.map((p) => (
             <PaketCard key={`${kundeTyp}-${p.name}`} paket={p} />
           ))}
-        </motion.div>
+        </ScrollRevealTab>
 
         {/* Extras accordion */}
-        <motion.div
+        <ScrollReveal
           key={`extras-${kundeTyp}`}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
+          yFrom={16}
+          extraDelay={0.1}
+          duration={0.5}
         >
           <ExtrasTable extras={extras} />
-        </motion.div>
+        </ScrollReveal>
 
         {/* Anfahrts-Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.25, duration: 0.5 }}
+        <ScrollReveal
+          yFrom={24}
+          extraDelay={0.25}
+          duration={0.5}
           className="mt-6 p-5 rounded-2xl bg-brand-navy/50 border border-white/5 flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
           <Car size={26} className="text-brand-blueLight flex-shrink-0" />
@@ -341,7 +338,7 @@ export default function Preise() {
           >
             Angebot anfragen →
           </a>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   )
