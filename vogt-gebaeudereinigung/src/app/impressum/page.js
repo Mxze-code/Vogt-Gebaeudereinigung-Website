@@ -43,7 +43,7 @@ export default function ImpressumPage() {
       </p>
 
       <h2>
-        Zentrale Kontaktstelle nach dem Digital Services Act - DSA (Verordnung (EU) 2022/265)
+        Zentrale Kontaktstelle nach dem Digital Services Act - DSA (Verordnung (EU) 2022/2065)
       </h2>
       <p>
         Unsere zentrale Kontaktstelle für Nutzer und Behörden nach Art. 11, 12 DSA erreichen Sie wie
