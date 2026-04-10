@@ -54,7 +54,7 @@ export default function ImpressumPage() {
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>
         <br />
         Telefon:{' '}
-        <a href="tel:+4972327321032">+49 07232 7321032</a>
+        <a href="tel:+4972327321032">+49 7232 7321032</a>
       </p>
       <p>Die für den Kontakt zur Verfügung stehenden Sprachen sind: Deutsch, Englisch.</p>
     </LegalPageLayout>
