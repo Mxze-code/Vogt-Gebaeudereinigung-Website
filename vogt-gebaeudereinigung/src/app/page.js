@@ -1,31 +1,31 @@
-import Navbar           from '@/components/Navbar'
-import Hero             from '@/components/Hero'
-import StatsBar         from '@/components/StatsBar'
-import Leistungen       from '@/components/Leistungen'
-import UberUns          from '@/components/UberUns'
-import Ablauf           from '@/components/Ablauf'
-import Preise           from '@/components/Preise'
-import Einsatzgebiet    from '@/components/Einsatzgebiet'
-import Kontakt          from '@/components/Kontakt'
-import Footer           from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import StatsBar from '@/components/StatsBar'
+import LandingLeistungenTeaser from '@/components/LandingLeistungenTeaser'
+import VorherNachher from '@/components/VorherNachher'
+import PreiseTeaser from '@/components/PreiseTeaser'
+import LandingAblaufTeaser from '@/components/LandingAblaufTeaser'
+import LandingKontaktTeaser from '@/components/LandingKontaktTeaser'
+import Einsatzgebiet from '@/components/Einsatzgebiet'
+import Footer from '@/components/Footer'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-brand-black">
       <Navbar />
       <main>
         <Hero />
         <StatsBar />
-        <Leistungen />
-        <UberUns />
-        <Ablauf />
-        <Preise />
-        <Einsatzgebiet />
-        <Kontakt />
+        <LandingLeistungenTeaser />
+        <VorherNachher />
+        <PreiseTeaser />
+        <LandingAblaufTeaser />
+        <LandingKontaktTeaser />
+        <Einsatzgebiet compact />
       </main>
       <Footer />
       <FloatingWhatsApp />
-    </>
+    </div>
   )
 }

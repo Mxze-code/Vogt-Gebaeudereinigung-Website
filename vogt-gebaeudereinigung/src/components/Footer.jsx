@@ -11,21 +11,17 @@ import {
 } from '@/constants/contact'
 
 const navLinks = [
-  { href: '#leistungen',   label: 'Leistungen' },
-  { href: '#uber-uns',     label: 'Über uns' },
-  { href: '#ablauf',       label: 'Ablauf' },
-  { href: '#preise',       label: 'Preise' },
-  { href: '#einsatzgebiet', label: 'Einsatzgebiet' },
-  { href: '#kontakt',      label: 'Kontakt' },
+  { href: '/', label: 'Das Wichtigste im Überblick' },
+  { href: '/leistungen-und-preise', label: 'Preise & Leistungen' },
+  { href: '/kontakt', label: 'Kontakt / Über uns' },
 ]
 
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
     <footer className="bg-brand-deep border-t border-white/[0.06]">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-14">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-11">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Logo + Tagline — items-start + w-fit: verhindert horizontales Strecken im Grid */}
           <div className="flex flex-col items-start gap-4">
             <Link href="/" className="block h-10 w-fit shrink-0" aria-label="Zur Startseite">
               <Image
@@ -41,23 +37,24 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
           <div>
             <h4 className="font-montserrat font-semibold text-brand-silverL text-sm mb-4 uppercase tracking-wider">
-              Navigation
+              Seiten
             </h4>
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-brand-gray hover:text-brand-silverL text-sm transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-brand-gray hover:text-brand-silverL text-sm transition-colors"
+                  >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Kontakt */}
           <div>
             <h4 className="font-montserrat font-semibold text-brand-silverL text-sm mb-4 uppercase tracking-wider">
               Kontakt
@@ -65,12 +62,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2 text-brand-gray text-sm">
                 <Mail size={14} className="mt-0.5 flex-shrink-0 text-brand-gray" />
-                <a href={CONTACT_MAILTO} className="italic hover:text-brand-silverL transition-colors">
+                <a href={CONTACT_MAILTO} className="hover:text-brand-silverL transition-colors">
                   {CONTACT_EMAIL}
                 </a>
               </li>
               <li>
-                <p className="text-brand-gray text-[0.65rem] uppercase tracking-wider mb-0.5">Telefon · Anrufe</p>
+                <p className="text-brand-gray text-xs uppercase tracking-wider mb-0.5">Telefon · Anrufe</p>
                 <a
                   href={PHONE_CALL_TEL}
                   className="flex items-center gap-2 text-brand-silverL text-sm hover:text-white transition-colors"
@@ -80,7 +77,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <p className="text-brand-gray text-[0.65rem] uppercase tracking-wider mb-0.5">WhatsApp · Nachrichten</p>
+                <p className="text-brand-gray text-xs uppercase tracking-wider mb-0.5">WhatsApp · Nachrichten</p>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
@@ -100,7 +97,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-white/[0.04] py-5 px-4 md:px-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-brand-gray text-xs">
           <p>© {year} VOGT Gebäudereinigung – Alle Rechte vorbehalten</p>

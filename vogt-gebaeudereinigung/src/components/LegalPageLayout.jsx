@@ -8,8 +8,8 @@ export default function LegalPageLayout({ title, children }) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-brand-black pt-28 pb-6 md:pt-32">
-        <div className="mx-auto max-w-2xl px-4 py-12 md:px-8 md:py-16 lg:max-w-3xl">
+      <main className="min-h-screen bg-brand-black pt-24 pb-6 md:pt-28">
+        <div className="mx-auto max-w-2xl px-4 py-8 md:px-8 md:py-12 lg:max-w-3xl">
           <h1 className="mb-10 font-montserrat text-2xl font-bold tracking-tight text-brand-silverLL md:mb-12 md:text-3xl">
             {title}
           </h1>

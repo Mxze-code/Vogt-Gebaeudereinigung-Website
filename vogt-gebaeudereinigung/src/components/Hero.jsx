@@ -33,8 +33,8 @@ export default function Hero() {
             />
 
             <a
-              href="#kontakt"
-              className="mt-10 w-full max-w-xs rounded-lg bg-brand-blue px-7 py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-blueMid hover:shadow-lg hover:shadow-brand-blue/30 md:mt-12 md:max-w-sm md:text-base"
+              href="/kontakt#kontakt"
+              className="btn-primary mt-8 w-full max-w-xs md:mt-10 md:max-w-sm md:text-base"
             >
               Kostenloses Angebot sichern →
             </a>
@@ -43,7 +43,7 @@ export default function Hero() {
       </div>
 
       {/* Untere Leiste: alles als Pills / Bubbles (kein Trennstrich) */}
-      <div className="relative z-10 mt-2 w-full shrink-0 bg-gradient-to-b from-transparent to-black/25 px-4 pb-24 pt-10 md:mt-4 md:px-6 md:pb-28 md:pt-12">
+      <div className="relative z-10 mt-2 w-full shrink-0 bg-gradient-to-b from-transparent to-black/25 px-4 pb-14 pt-6 md:mt-3 md:px-6 md:pb-16 md:pt-8">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-3 md:gap-3.5">
           <h1 className="inline-flex max-w-[min(100%,28rem)] items-center justify-center text-balance rounded-full border border-white/[0.1] bg-white/[0.035] px-3.5 py-2 text-center text-xs font-normal tracking-wide text-brand-silver/90 shadow-[0_0_24px_-10px_rgba(37,121,212,0.2)] backdrop-blur-sm md:max-w-none md:px-4 md:py-2.5 md:text-sm">
             Für Privat &amp; Gewerbe, Pforzheim, Karlsruhe &amp; Enzkreis.

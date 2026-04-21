@@ -73,32 +73,24 @@ export default function Kontakt() {
   }
 
   return (
-    <section id="kontakt" className="py-20 bg-brand-deep section-atmosphere section-glow-left">
+    <section id="kontakt" className="scroll-mt-20 py-12 md:py-14 bg-brand-deep">
       <div className="section-padding">
         {/* Header */}
         <ScrollReveal
           yFrom={24}
           duration={0.6}
-          className="text-center mb-14"
+          className="text-center mb-8"
         >
-          <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
+          <p className="section-eyebrow mb-3">
             Kein Risiko – unverbindlich
           </p>
-          <h2
-            className="font-montserrat font-bold text-3xl md:text-4xl"
-            style={{
-              background: 'linear-gradient(160deg, #edf0f5 0%, #c2c8d4 60%, #9aaabb 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
+          <h2 className="section-title-lg text-silver-gradient">
             Jetzt Anfrage senden
           </h2>
-          <p className="text-brand-gray text-sm mt-3">Wir antworten innerhalb von 24 Stunden</p>
+          <p className="section-copy-sm mt-3">Wir antworten innerhalb von 24 Stunden</p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Left: Contact options */}
           <ScrollReveal
             axis="x"
@@ -181,7 +173,7 @@ export default function Kontakt() {
             duration={0.6}
           >
             {status === 'sent' ? (
-              <div className="flex flex-col items-center justify-center h-full gap-5 text-center py-20 rounded-2xl bg-brand-navy/50 border border-brand-blue/20">
+              <div className="flex flex-col items-center justify-center h-full gap-4 text-center py-12 rounded-2xl bg-brand-navy/50 border border-brand-blue/20">
                 <CheckCircle size={52} className="text-brand-blueLight" />
                 <h3 className="font-montserrat font-bold text-brand-silverLL text-xl">
                   E-Mail geöffnet!

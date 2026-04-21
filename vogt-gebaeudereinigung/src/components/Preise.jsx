@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal, { ScrollRevealTab } from '@/components/ScrollReveal'
 import { Check, Minus, Car, ChevronDown, ChevronUp } from 'lucide-react'
@@ -137,15 +138,7 @@ function PaketCard({ paket }) {
       <h3 className="font-montserrat font-bold text-brand-silverLL text-xl mb-1">{paket.name}</h3>
       <p className="text-brand-gray text-sm mb-4">{paket.interval}</p>
 
-      <div
-        className="font-montserrat font-extrabold text-3xl mb-5"
-        style={{
-          background: 'linear-gradient(160deg, #edf0f5 0%, #c2c8d4 60%, #9aaabb 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-        }}
-      >
+      <div className="font-montserrat font-extrabold text-3xl mb-5 text-silver-gradient">
         {paket.price}
       </div>
 
@@ -155,16 +148,12 @@ function PaketCard({ paket }) {
         ))}
       </ul>
 
-      <a
-        href="#kontakt"
-        className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-200 ${
-          paket.highlighted
-            ? 'bg-brand-blue hover:bg-brand-blueMid text-white hover:shadow-lg hover:shadow-brand-blue/30'
-            : 'border border-brand-blue/40 text-brand-blueLight hover:bg-brand-blue/10'
-        }`}
+      <Link
+        href="/kontakt#kontakt"
+        className={paket.highlighted ? 'btn-primary w-full' : 'btn-secondary w-full'}
       >
         Jetzt anfragen
-      </a>
+      </Link>
     </div>
   )
 }
@@ -226,35 +215,27 @@ export default function Preise() {
   const extras = istGewerbe ? gewerbeExtras : privatExtras
 
   return (
-    <section id="preise" className="py-20 bg-brand-deep section-atmosphere section-glow-right">
+    <section id="preise" className="scroll-mt-20 py-12 md:py-14 bg-brand-deep">
       <div className="section-padding">
         {/* Header */}
         <ScrollReveal
           yFrom={24}
           duration={0.6}
-          className="text-center mb-8"
+          className="text-center mb-5"
         >
-          <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
+          <p className="section-eyebrow mb-3">
             Transparent &amp; fair
           </p>
-          <h2
-            className="font-montserrat font-bold text-3xl md:text-4xl"
-            style={{
-              background: 'linear-gradient(160deg, #edf0f5 0%, #c2c8d4 60%, #9aaabb 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
+          <h2 className="section-title-lg text-silver-gradient">
             Unsere Preise
           </h2>
-          <p className="text-brand-gray text-sm mt-3 max-w-lg mx-auto">
+          <p className="section-copy-sm mt-3 max-w-lg mx-auto">
             Alle Preise verstehen sich als Orientierungswerte. Ihr individuelles Angebot erhalten Sie kostenlos und unverbindlich.
           </p>
         </ScrollReveal>
 
         {/* Gewerbe / Privat */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center mb-6">
           <div
             className="inline-flex rounded-xl border border-white/10 bg-brand-navy/60 p-1"
             role="tablist"
@@ -290,7 +271,7 @@ export default function Preise() {
         </div>
 
         {!istGewerbe && (
-          <p className="text-center text-brand-gray text-sm max-w-xl mx-auto mb-8 -mt-4">
+          <p className="text-center section-copy-sm max-w-xl mx-auto mb-5 -mt-2">
             Haushaltsreinigung nach Zeitaufwand – ideal für Wohnungen und Einfamilienhäuser. Umfang je nach Paket.
           </p>
         )}
@@ -301,7 +282,7 @@ export default function Preise() {
           tabKey={kundeTyp}
           yFrom={16}
           duration={0.35}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-6"
         >
           {pakete.map((p) => (
             <PaketCard key={`${kundeTyp}-${p.name}`} paket={p} />
@@ -332,12 +313,12 @@ export default function Preise() {
               Bis 10 km um Bretten fahren wir kostenlos zu Ihnen. Jeder weitere Kilometer wird mit 0,50 € berechnet.
             </p>
           </div>
-          <a
-            href="#kontakt"
-            className="sm:ml-auto flex-shrink-0 px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blueMid text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/30"
+          <Link
+            href="/kontakt#kontakt"
+            className="btn-primary sm:ml-auto flex-shrink-0"
           >
             Angebot anfragen →
-          </a>
+          </Link>
         </ScrollReveal>
       </div>
     </section>

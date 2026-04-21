@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import { MapPin, Navigation, ExternalLink } from 'lucide-react'
 
@@ -44,38 +45,75 @@ const staedte = [
   },
 ]
 
-export default function Einsatzgebiet() {
+const compactOrte = ['Bretten', 'Pforzheim', 'Karlsruhe', 'Enzkreis', 'Kraichgau', 'Umgebung']
+
+export default function Einsatzgebiet({ compact = false }) {
   const [active, setActive] = useState(staedte[0])
 
+  if (compact) {
+    return (
+      <section
+        id="einsatzgebiet"
+        className="scroll-mt-20 border-t border-white/[0.06] surface-texture-black py-12 md:py-14"
+      >
+        <div className="section-padding max-w-3xl mx-auto text-center">
+          <ScrollReveal yFrom={20} duration={0.5}>
+            <p className="section-eyebrow mb-3">
+              Region
+            </p>
+            <h2 className="section-title-md text-silver-gradient mb-2">
+              Einsatzgebiet
+            </h2>
+            <div className="surface-wave-underline" aria-hidden />
+            <p className="section-copy-sm mt-4">
+              Von Bretten aus unterwegs — kurze Wege, schnelle Termine. Kostenlose Anfahrt bis 10 km,
+              darüber 0,50 € pro km (Stand wie auf der Preisseite).
+            </p>
+          </ScrollReveal>
+          <ScrollReveal yFrom={16} extraDelay={0.06} duration={0.45} className="mt-8 flex flex-wrap justify-center gap-2">
+            {compactOrte.map((ort) => (
+              <span
+                key={ort}
+                className="inline-flex rounded-full border border-white/10 px-3 py-1.5 text-xs text-brand-silverDark md:text-sm"
+              >
+                {ort}
+              </span>
+            ))}
+          </ScrollReveal>
+          <ScrollReveal yFrom={16} extraDelay={0.12} duration={0.45} className="mt-8">
+            <Link
+              href="/kontakt#einsatzgebiet"
+              className="btn-text"
+            >
+              Karte &amp; Details zum Einsatzgebiet →
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <section id="einsatzgebiet" className="py-20 bg-brand-black section-atmosphere section-glow-right">
+    <section id="einsatzgebiet" className="scroll-mt-20 py-12 md:py-14 bg-brand-black">
       <div className="section-padding">
         {/* Header */}
         <ScrollReveal
           yFrom={24}
           duration={0.6}
-          className="text-center mb-14"
+          className="text-center mb-8"
         >
-          <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
+          <p className="section-eyebrow mb-3">
             Wo wir aktiv sind
           </p>
-          <h2
-            className="font-montserrat font-bold text-3xl md:text-4xl"
-            style={{
-              background: 'linear-gradient(160deg, #edf0f5 0%, #c2c8d4 60%, #9aaabb 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
+          <h2 className="section-title-lg text-silver-gradient">
             Unser Einsatzgebiet
           </h2>
-          <p className="text-brand-gray text-sm mt-3">
+          <p className="section-copy-sm mt-3">
             Klicken Sie auf eine Stadt, um sie auf der Karte zu sehen
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 items-start">
           {/* Map */}
           <ScrollReveal
             axis="x"
@@ -118,7 +156,7 @@ export default function Einsatzgebiet() {
             xFrom={24}
             extraDelay={0.1}
             duration={0.6}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-4"
           >
             {/* City Grid */}
             <div className="grid grid-cols-2 gap-3">
@@ -177,12 +215,12 @@ export default function Einsatzgebiet() {
             </div>
 
             {/* CTA */}
-            <a
-              href="#kontakt"
-              className="flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-brand-blue hover:bg-brand-blueMid text-white font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-blue/30"
+            <Link
+              href="/kontakt#kontakt"
+            className="btn-primary"
             >
               Jetzt anfragen – wir kommen zu Ihnen →
-            </a>
+            </Link>
           </ScrollReveal>
         </div>
       </div>

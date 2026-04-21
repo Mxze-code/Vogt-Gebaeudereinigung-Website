@@ -30,33 +30,52 @@ const karten = [
   },
 ]
 
-const gradientTitle = {
-  background: 'linear-gradient(160deg, #edf0f5 0%, #c2c8d4 60%, #9aaabb 100%)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  backgroundClip: 'text',
-}
+export default function UberUns({ brief = false }) {
+  if (brief) {
+    return (
+      <section
+        id="uber-uns"
+        className="scroll-mt-20 border-t border-white/[0.06] py-12 md:py-14 bg-brand-deep"
+      >
+        <div className="section-padding max-w-3xl mx-auto">
+          <ScrollReveal yFrom={20} duration={0.55} className="text-center md:text-left">
+            <p className="section-eyebrow mb-3">
+              Über uns
+            </p>
+            <h2 className="section-title-md text-silver-gradient mb-5">
+              Regional verwurzelt
+            </h2>
+            <p className="section-copy-sm mb-4">
+              VOGT steht für zuverlässige Gebäudereinigung in Bretten und der Region — mit festen
+              Abläufen, fairen Preisen und direkter Erreichbarkeit. Kein Callcenter: Sie sprechen mit
+              Menschen, die Ihr Objekt verstehen und persönlich betreuen.
+            </p>
+            <p className="section-copy-sm">
+              Wie wir arbeiten und was uns unterscheidet, lesen Sie auf dieser Seite im Detail —
+              inklusive Einsatzgebiet und Kontaktmöglichkeiten.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+    )
+  }
 
-export default function UberUns() {
   return (
     <section
       id="uber-uns"
-      className="py-20 md:py-28 bg-brand-deep section-atmosphere section-glow-right"
+      className="py-12 md:py-16 bg-brand-deep"
     >
       <div className="section-padding">
         {/* Hauptkopf */}
         <ScrollReveal
           yFrom={24}
           duration={0.6}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-10 md:mb-12"
         >
-          <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-3">
+          <p className="section-eyebrow mb-3">
             Kennenlernen
           </p>
-          <h2
-            className="font-montserrat font-bold text-3xl md:text-5xl mb-4"
-            style={gradientTitle}
-          >
+          <h2 className="section-title-lg text-silver-gradient mb-4">
             Über uns
           </h2>
           <p className="text-brand-silverDark text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -70,17 +89,17 @@ export default function UberUns() {
           <ScrollReveal
             yFrom={20}
             duration={0.5}
-            className="text-center mb-10 md:mb-12"
+            className="text-center mb-6 md:mb-8"
           >
-            <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-2">
+            <p className="section-eyebrow mb-2">
               Unser Versprechen
             </p>
-            <h3 className="font-montserrat font-bold text-2xl md:text-3xl" style={gradientTitle}>
+            <h3 className="section-title-md text-silver-gradient">
               Warum VOGT?
             </h3>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {gruende.map((item, i) => {
               const Icon = item.icon
               return (
@@ -110,7 +129,7 @@ export default function UberUns() {
             yFrom={24}
             extraDelay={0.15}
             duration={0.5}
-            className="mt-12 p-6 md:p-8 rounded-2xl bg-brand-navy/60 border border-brand-blue/20 text-center"
+            className="mt-8 p-5 md:p-6 rounded-2xl bg-brand-navy/60 border border-brand-blue/20 text-center"
           >
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
@@ -122,12 +141,11 @@ export default function UberUns() {
               empfehlen!
             </blockquote>
             <p className="text-brand-gray text-sm">– Zufriedener Kunde aus Bretten</p>
-            <p className="text-brand-gray/50 text-xs mt-3">Google Reviews kommen bald</p>
           </ScrollReveal>
         </div>
 
         <div
-          className="my-16 md:my-20 h-px max-w-3xl mx-auto bg-gradient-to-r from-transparent via-white/15 to-transparent"
+          className="my-10 md:my-12 h-px max-w-3xl mx-auto bg-gradient-to-r from-transparent via-white/15 to-transparent"
           aria-hidden
         />
 
@@ -136,12 +154,12 @@ export default function UberUns() {
           <ScrollReveal
             yFrom={20}
             duration={0.5}
-            className="text-center mb-10 md:mb-12"
+            className="text-center mb-6 md:mb-8"
           >
-            <p className="text-brand-blueLight text-sm font-medium tracking-widest uppercase mb-2">
+            <p className="section-eyebrow mb-2">
               Diskretion & Sorgfalt
             </p>
-            <h3 className="font-montserrat font-bold text-2xl md:text-3xl mb-4" style={gradientTitle}>
+            <h3 className="section-title-md text-silver-gradient mb-4">
               So arbeiten wir
             </h3>
             <p className="text-brand-silverDark text-base max-w-xl mx-auto leading-relaxed">
@@ -149,7 +167,7 @@ export default function UberUns() {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {karten.map((item, i) => (
               <ScrollReveal
                 key={item.title}
@@ -179,7 +197,7 @@ export default function UberUns() {
             yFrom={24}
             extraDelay={0.15}
             duration={0.5}
-            className="mt-12 rounded-2xl border border-brand-blue/30 bg-gradient-to-br from-brand-blue/20 via-brand-navy/50 to-brand-blue/10 px-6 py-8 md:px-10 text-center relative overflow-hidden"
+            className="mt-8 rounded-2xl border border-brand-blue/30 bg-gradient-to-br from-brand-blue/20 via-brand-navy/50 to-brand-blue/10 px-5 py-6 md:px-8 text-center relative overflow-hidden"
           >
             <div
               className="pointer-events-none absolute inset-0 opacity-90"
