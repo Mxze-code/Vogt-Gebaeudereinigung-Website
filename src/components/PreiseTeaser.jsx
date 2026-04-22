@@ -17,7 +17,7 @@ export default function PreiseTeaser() {
               Preise
             </p>
             <h2 className="section-title-md mb-2 max-w-md text-silver-gradient">
-              Klare Orientierung statt vager Schaetzungen
+              Klare Orientierung statt vager Schätzungen
             </h2>
             <div className="surface-wave-underline ml-0" aria-hidden />
           </ScrollReveal>
@@ -34,7 +34,7 @@ export default function PreiseTeaser() {
               </div>
               <div className="rounded-2xl border border-white/[0.06] bg-brand-black/25 px-4 py-3">
                 <p className="text-[11px] uppercase tracking-[0.22em] text-brand-blueLight/80">Abrechnung</p>
-                <p className="mt-2 text-sm text-brand-silverL">Passend zu Flaeche oder Aufwand</p>
+                <p className="mt-2 text-sm text-brand-silverL">Passend zu Fläche oder Aufwand</p>
               </div>
               <div className="rounded-2xl border border-white/[0.06] bg-brand-black/25 px-4 py-3">
                 <p className="text-[11px] uppercase tracking-[0.22em] text-brand-blueLight/80">Extras</p>
@@ -47,7 +47,7 @@ export default function PreiseTeaser() {
         <div className="mx-auto mb-6 grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">
           <ScrollReveal yFrom={20} duration={0.45} className="card-base p-6">
             <p className="text-[11px] uppercase tracking-[0.22em] text-brand-blueLight/80">Gewerbe</p>
-            <h3 className="mt-3 font-montserrat text-lg font-semibold text-brand-silverLL">Planbar fuer Buero, Praxis und Flaeche</h3>
+            <h3 className="mt-3 font-montserrat text-lg font-semibold text-brand-silverLL">Planbar für Büro, Praxis und Fläche</h3>
             <ul className="flex flex-col gap-3">
               {gewerbeKurz.map((line) => (
                 <li key={line} className="flex items-start gap-2 text-sm text-brand-silverDark">
@@ -57,13 +57,13 @@ export default function PreiseTeaser() {
               ))}
             </ul>
             <p className="mt-5 text-sm leading-6 text-brand-gray">
-              Die Preislogik richtet sich nach Groesse, Intervall und Leistungsumfang, damit Angebote auch
+              Die Preislogik richtet sich nach Größe, Intervall und Leistungsumfang, damit Angebote auch
               im Alltag belastbar bleiben.
             </p>
           </ScrollReveal>
           <ScrollReveal yFrom={20} staggerIndex={1} staggerStep={0.08} duration={0.45} className="card-base p-6">
             <p className="text-[11px] uppercase tracking-[0.22em] text-brand-blueLight/80">Privat</p>
-            <h3 className="mt-3 font-montserrat text-lg font-semibold text-brand-silverLL">Individuell fuer Haushalt und Bedarf vor Ort</h3>
+            <h3 className="mt-3 font-montserrat text-lg font-semibold text-brand-silverLL">Individuell für Haushalt und Bedarf vor Ort</h3>
             <ul className="flex flex-col gap-3">
               {privatKurz.map((line) => (
                 <li key={line} className="flex items-start gap-2 text-sm text-brand-silverDark">
@@ -73,7 +73,7 @@ export default function PreiseTeaser() {
               ))}
             </ul>
             <p className="mt-5 text-sm leading-6 text-brand-gray">
-              Vor allem bei Privathaushalten zaehlen Aufwand, Intervalle und individuelle Wuensche. Deshalb
+              Vor allem bei Privathaushalten zählen Aufwand, Intervalle und individuelle Wünsche. Deshalb
               kalkulieren wir transparent statt pauschal.
             </p>
           </ScrollReveal>

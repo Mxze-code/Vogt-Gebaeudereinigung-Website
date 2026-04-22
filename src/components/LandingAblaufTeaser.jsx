@@ -7,12 +7,12 @@ const steps = [
   {
     n: '01',
     t: 'Anfrage',
-    d: 'Sie schildern kurz Objekt, Bedarf und gewuenschten Rahmen.',
+    d: 'Sie schildern kurz Objekt, Bedarf und gewünschten Rahmen.',
   },
   {
     n: '02',
     t: 'Abstimmung',
-    d: 'Wir klaeren Umfang, Turnus und sinnvolle Leistungen fuer Ihr Objekt.',
+    d: 'Wir klären Umfang, Turnus und sinnvolle Leistungen für Ihr Objekt.',
   },
   {
     n: '03',
@@ -22,7 +22,7 @@ const steps = [
   {
     n: '04',
     t: 'Reinigung',
-    d: 'Die Umsetzung erfolgt gruendlich, zuverlaessig und nachvollziehbar.',
+    d: 'Die Umsetzung erfolgt gründlich, zuverlässig und nachvollziehbar.',
   },
 ]
 

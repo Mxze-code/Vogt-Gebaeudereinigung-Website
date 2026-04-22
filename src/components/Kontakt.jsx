@@ -79,15 +79,18 @@ export default function Kontakt() {
         <ScrollReveal
           yFrom={24}
           duration={0.6}
-          className="text-center mb-8"
+          className="mb-8 text-center"
         >
           <p className="section-eyebrow mb-3">
-            Kein Risiko – unverbindlich
+            Kontakt
           </p>
           <h2 className="section-title-lg text-silver-gradient">
-            Jetzt Anfrage senden
+            Direkt mit uns sprechen
           </h2>
-          <p className="section-copy-sm mt-3">Wir antworten innerhalb von 24 Stunden</p>
+          <p className="section-copy-sm mx-auto mt-3 max-w-xl">
+            Sie erreichen uns telefonisch, per E-Mail oder ganz unkompliziert über das
+            Kontaktformular.
+          </p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">

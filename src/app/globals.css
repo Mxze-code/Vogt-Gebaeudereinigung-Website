@@ -30,7 +30,7 @@ body {
 
 @layer utilities {
   /**
-   * Ruhige Flächen-Textur ohne Grid: nur weiche Lichtverlaeufe fuer Tiefe.
+   * Ruhige Flächen-Textur ohne Grid: nur weiche Lichtverläufe für Tiefe.
    */
   .surface-texture-black {
     background-color: #06080e;
@@ -61,7 +61,7 @@ body {
     background-position: top center, center bottom, center;
     background-repeat: no-repeat, no-repeat, no-repeat;
   }
-  /** Dezente Akzentlinie unter Ueberschriften */
+  /** Dezente Akzentlinie unter Überschriften */
   .surface-wave-underline {
     height: 2px;
     margin: 0.7rem auto 0;

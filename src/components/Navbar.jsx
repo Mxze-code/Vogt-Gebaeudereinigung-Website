@@ -34,25 +34,25 @@ export default function Navbar() {
         ? pathname === '/'
         : pathname === href || pathname.startsWith(`${href}/`)
     return [
-      'text-sm transition-colors duration-200 whitespace-nowrap shrink-0 rounded px-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blueLight/50',
+      'text-[13px] tracking-[0.005em] transition-colors duration-200 whitespace-nowrap shrink-0 rounded px-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blueLight/40',
       active
-        ? 'text-brand-silverLL font-semibold'
-        : 'text-brand-silverDark hover:text-brand-silverLL',
+        ? 'text-brand-silverLL'
+        : 'text-brand-silver/80 hover:text-brand-silverLL',
     ].join(' ')
   }
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         navSolid
-          ? 'bg-brand-black/95 backdrop-blur-md shadow-lg py-3'
-          : 'bg-transparent py-5'
+          ? 'border-b border-white/[0.04] bg-brand-black/65 py-3 backdrop-blur-[10px]'
+          : 'border-b border-transparent bg-transparent py-5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-8 flex items-center justify-between">
+      <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-6 px-4 md:px-8">
         <Link
           href="/"
-          className="flex h-12 w-fit shrink-0 items-center"
+          className="flex h-10 w-fit shrink-0 items-center md:h-11"
           onClick={() => setMenuOpen(false)}
         >
           <Image
@@ -65,24 +65,25 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-3 xl:gap-4">
-          <div className="flex items-center gap-4 xl:gap-6 rounded-full border border-white/[0.08] bg-brand-black/55 px-4 py-2 shadow-sm backdrop-blur-md">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={linkClass(link.href)}>
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        <nav className="hidden items-center justify-center gap-9 lg:flex xl:gap-12">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className={linkClass(link.href)}>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden lg:flex">
           <Link
             href="/kontakt#kontakt"
-            className="btn-primary px-5 py-2.5"
+            className="inline-flex items-center justify-center rounded-lg bg-brand-blue px-4 py-2 text-[0.8rem] font-semibold tracking-[0.005em] text-white shadow-[0_6px_18px_-12px_rgba(19,88,160,0.75)] transition-colors duration-200 hover:bg-brand-blueMid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blueLight/40"
           >
             Jetzt anfragen
           </Link>
-        </nav>
+        </div>
 
         <button
-          className="lg:hidden text-brand-silverL"
+          className="justify-self-end text-brand-silverL transition-colors hover:text-brand-silverLL lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menü"
         >

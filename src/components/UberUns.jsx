@@ -1,7 +1,54 @@
 'use client'
 
 import ScrollReveal from '@/components/ScrollReveal'
-import { CheckCircle, Star, Clock, Euro, ThumbsUp, MapPin } from 'lucide-react'
+import { CheckCircle, Star, Clock, Euro, ThumbsUp, MapPin, User } from 'lucide-react'
+
+const trustPoints = [
+  'Zuverlässig & pünktlich',
+  'Faire, transparente Preise',
+  'Kurzfristige Termine möglich',
+]
+
+const socialLinks = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/',
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+        className="h-[18px] w-[18px]"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/',
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+        className="h-[18px] w-[18px]"
+      >
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </svg>
+    ),
+  },
+]
 
 const gruende = [
   { icon: CheckCircle, title: 'Zuverlässigkeit',     desc: 'Pünktliche Termine, konsequente Ausführung – Sie können sich auf uns verlassen, jedes Mal.' },
@@ -35,25 +82,83 @@ export default function UberUns({ brief = false }) {
     return (
       <section
         id="uber-uns"
-        className="scroll-mt-20 border-t border-white/[0.06] py-12 md:py-14 bg-brand-deep"
+        className="scroll-mt-20 border-t border-white/[0.06] bg-brand-deep py-12 md:py-14"
       >
-        <div className="section-padding max-w-3xl mx-auto">
-          <ScrollReveal yFrom={20} duration={0.55} className="text-center md:text-left">
-            <p className="section-eyebrow mb-3">
-              Über uns
-            </p>
-            <h2 className="section-title-md text-silver-gradient mb-5">
-              Regional verwurzelt
-            </h2>
-            <p className="section-copy-sm mb-4">
-              VOGT steht für zuverlässige Gebäudereinigung in Bretten und der Region — mit festen
-              Abläufen, fairen Preisen und direkter Erreichbarkeit. Kein Callcenter: Sie sprechen mit
-              Menschen, die Ihr Objekt verstehen und persönlich betreuen.
-            </p>
-            <p className="section-copy-sm">
-              Wie wir arbeiten und was uns unterscheidet, lesen Sie auf dieser Seite im Detail —
-              inklusive Einsatzgebiet und Kontaktmöglichkeiten.
-            </p>
+        <div className="section-padding mx-auto max-w-3xl">
+          <ScrollReveal yFrom={20} duration={0.55}>
+            <div className="grid gap-7 md:grid-cols-[auto_1fr] md:items-start md:gap-9">
+              {/* Portrait-Platzhalter */}
+              <div className="flex flex-col items-center md:items-start md:pt-1">
+                <div className="relative h-36 w-36 overflow-hidden rounded-full border border-white/10 bg-gradient-to-br from-brand-navy via-brand-deep to-brand-black shadow-[0_8px_28px_-18px_rgba(19,88,160,0.6)] md:h-40 md:w-40">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <User size={48} className="text-brand-blueLight/55" aria-hidden />
+                  </div>
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/5"
+                  />
+                </div>
+                <p className="mt-3 text-[10px] uppercase tracking-[0.22em] text-brand-gray/70">
+                  Portrait folgt
+                </p>
+              </div>
+
+              <div className="text-center md:text-left">
+                <p className="section-eyebrow mb-3">
+                  Über uns
+                </p>
+                <h2 className="section-title-md mb-5 text-silver-gradient">
+                  Regional verwurzelt
+                </h2>
+                <p className="section-copy-sm mb-4">
+                  Vogt Gebäudereinigung steht für zuverlässige und gründliche Reinigung in Bretten sowie
+                  im Raum Karlsruhe, Pforzheim und Enzkreis. Wir arbeiten strukturiert, pünktlich und
+                  mit klarem Anspruch an Qualität – egal ob Privatkunde oder Gewerbe.
+                </p>
+                <p className="section-copy-sm">
+                  Kurze Wege, schnelle Rückmeldungen und flexible Termine sind für uns
+                  selbstverständlich. Sie haben einen festen Ansprechpartner und erhalten genau die
+                  Leistung, die Sie wirklich brauchen – ohne unnötigen Aufwand.
+                </p>
+              </div>
+            </div>
+
+            <ul className="mt-7 flex flex-col gap-2.5 md:gap-3">
+              {trustPoints.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-2.5 text-sm text-brand-silverL md:text-[15px]"
+                >
+                  <CheckCircle
+                    size={15}
+                    className="mt-[3px] shrink-0 text-brand-blueLight"
+                    aria-hidden
+                  />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-9 flex flex-col items-center gap-4 border-t border-white/[0.05] pt-7 md:flex-row md:items-center md:justify-between md:gap-6 md:text-left">
+              <p className="max-w-xl text-[13px] leading-relaxed text-brand-gray md:text-sm">
+                Auf unseren Social-Media-Kanälen zeigen wir echte Einblicke in unsere Arbeit und
+                aktuelle Projekte.
+              </p>
+              <div className="flex items-center gap-2.5">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.025] text-brand-silver/85 transition-colors duration-200 hover:border-brand-blue/35 hover:bg-brand-blue/10 hover:text-brand-silverLL focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blueLight/40"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>

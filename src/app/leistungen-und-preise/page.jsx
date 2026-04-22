@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 import Leistungen from '@/components/Leistungen'
 import VorherNachher from '@/components/VorherNachher'
+import SoArbeitenWir from '@/components/SoArbeitenWir'
 import Ablauf from '@/components/Ablauf'
 import Preise from '@/components/Preise'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -78,6 +79,10 @@ export default function LeistungenUndPreisePage() {
             surfaceClass="surface-texture-deep"
             showCta={false}
           />
+        </div>
+
+        <div className="border-t border-white/[0.04]">
+          <SoArbeitenWir />
         </div>
 
         <div className="border-t border-white/[0.04]">

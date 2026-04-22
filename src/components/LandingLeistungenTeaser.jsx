@@ -32,8 +32,8 @@ export default function LandingLeistungenTeaser() {
 
           <ScrollReveal yFrom={20} extraDelay={0.06} duration={0.5} className="text-left">
             <p className="section-copy max-w-xl">
-              Ob Buero, Praxis oder Privathaushalt: Wir arbeiten strukturiert, gruendlich und mit
-              Leistungen, die sich sauber in Ihren Ablauf einfuegen.
+              Ob Büro, Praxis oder Privathaushalt: Wir arbeiten strukturiert, gründlich und mit
+              Leistungen, die sich sauber in Ihren Ablauf einfügen.
             </p>
             <div className="mt-5 flex flex-wrap gap-2.5">
               {focusAreas.map((item) => (
@@ -46,7 +46,7 @@ export default function LandingLeistungenTeaser() {
               ))}
             </div>
             <p className="section-copy-sm mt-5 max-w-lg">
-              Die wichtigsten Bereiche sehen Sie hier im Ueberblick. Alle Positionen und Pakete finden
+              Die wichtigsten Bereiche sehen Sie hier im Überblick. Alle Positionen und Pakete finden
               Sie gesammelt auf der Detailseite.
             </p>
           </ScrollReveal>
