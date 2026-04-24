@@ -12,7 +12,7 @@ const trustPoints = [
 const socialLinks = [
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/',
+    href: 'https://www.instagram.com/vogt.reinigung/',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ const socialLinks = [
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden
-        className="h-[18px] w-[18px]"
+        className="h-[34px] w-[34px]"
       >
         <rect x="3" y="3" width="18" height="18" rx="5" />
         <circle cx="12" cy="12" r="4" />
@@ -32,7 +32,7 @@ const socialLinks = [
   },
   {
     label: 'Facebook',
-    href: 'https://www.facebook.com/',
+    href: 'https://www.facebook.com/profile.php?id=61570764329998',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ const socialLinks = [
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden
-        className="h-[18px] w-[18px]"
+        className="h-[34px] w-[34px]"
       >
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
@@ -152,7 +152,7 @@ export default function UberUns({ brief = false }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.025] text-brand-silver/85 transition-colors duration-200 hover:border-brand-blue/35 hover:bg-brand-blue/10 hover:text-brand-silverLL focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blueLight/40"
+                    className="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-white/[0.025] text-brand-silver/85 transition-colors duration-200 hover:border-brand-blue/35 hover:bg-brand-blue/10 hover:text-brand-silverLL focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blueLight/40"
                   >
                     {social.icon}
                   </a>

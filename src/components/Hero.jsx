@@ -1,39 +1,44 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone } from 'lucide-react'
-import LineWaves from './LineWaves'
 
 const trustItems = [
   'Zuverlässig & pünktlich',
-  'Flexible Termine',
-  'Faire Preise',
+  'Kurzfristige Termine möglich',
+  'Transparente und faire Preise',
   '10 km kostenlose Anfahrt',
 ]
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-brand-black">
-      {/* Background base */}
-      <div className="absolute inset-0 bg-brand-black" />
+      {/* Background from supplied hero-cleaning code */}
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(64, 152, 255, 0.42), transparent 10%, transparent 90%, rgba(64, 152, 255, 0.25)), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0, rgba(255, 255, 255, 0.025) 13px, transparent 13px, transparent 26px), radial-gradient(circle at 76% 18%, rgba(66, 153, 255, 0.22), transparent 34%), linear-gradient(115deg, #061122, #081831 48%, #0d2241)',
+        }}
+      />
 
-      {/* Ambient animated layer — leicht gekippt, Flow links unten → rechts oben */}
-      <div className="absolute -top-[10%] -bottom-[25%] -left-[35%] w-[150%] opacity-75 blur-[1px]">
-        <LineWaves
-          speed={0.1}
-          innerLineCount={38}
-          outerLineCount={44}
-          warpIntensity={0.35}
-          rotation={-28}
-          edgeFadeWidth={0}
-          colorCycleSpeed={0.35}
-          brightness={0.13}
-          color1="#ffffff"
-          color2="#ffffff"
-          color3="#ffffff"
-          enableMouseInteraction={false}
-          mouseInfluence={0}
-        />
-      </div>
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(64, 152, 255, 0.85), transparent 2px), linear-gradient(to top, rgba(64, 152, 255, 0.85), transparent 2px)',
+        }}
+      />
+
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.22) 100%), radial-gradient(circle at 18% 86%, rgba(255, 255, 255, 0.08), transparent 20%)',
+        }}
+      />
 
       {/* Calm reading zone — Logo-Bereich klar freigestellt */}
       <div
