@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-brand-black:      #06080e;
+  --color-brand-deep:       #090c14;
+  --color-brand-navy:       #0b1828;
+  --color-brand-navy2:      #0f2035;
+  --color-brand-blue:       #1358a0;
+  --color-brand-blueMid:    #1a6abf;
+  --color-brand-blueLight:  #2579d4;
+  --color-brand-silverDark: #9aaabb;
+  --color-brand-silver:     #c2c8d4;
+  --color-brand-silverL:    #dce2ec;
+  --color-brand-silverLL:   #edf0f5;
+  --color-brand-gray:       #6a7c90;
+
+  /* Fonts */
+  --font-inter:      var(--font-inter-var), sans-serif;
+  --font-montserrat: var(--font-montserrat-var), sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #06080e;
+  color: #dce2ec;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-silver-gradient {
+    background: linear-gradient(160deg, #edf0f5 0%, #c2c8d4 60%, #9aaabb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-blue-gradient {
+    background: linear-gradient(135deg, #2579d4 0%, #c2c8d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  .card-base {
+    background-color: color-mix(in srgb, #0b1828 70%, transparent);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1rem;
+    transition: all 0.3s;
+  }
+  .card-base:hover {
+    border-color: color-mix(in srgb, #1358a0 40%, transparent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px color-mix(in srgb, #1358a0 10%, transparent);
+  }
+}
